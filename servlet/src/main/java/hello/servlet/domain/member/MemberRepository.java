@@ -34,6 +34,11 @@ public class MemberRepository {
     public List<Member> findAll(){
         return new ArrayList<>(store.values());
     }
+
+    public Member deleteById(Long id){
+        store.remove(id);
+        return store.get(id);
+    }
     public void clearStore(){
         store.clear();
     }

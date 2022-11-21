@@ -48,4 +48,25 @@ class MemberRepositoryTest {
         assertThat(result.size()).isEqualTo(2);
         assertThat(result).contains(member1, member2);
     }
+
+    @Test
+    void deleteById() {
+        //given
+        Member member1 = new Member("member1",21);
+        Member member2 = new Member("member2",31);
+
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+
+
+        // when
+
+        Member deleteMember = memberRepository.deleteById(member1.getId());
+        List<Member> result = memberRepository.findAll();
+
+        //then
+        assertThat(result.size()).isEqualTo(1);
+
+//        assertThat(result).contains(member1, member2);
+    }
 }
