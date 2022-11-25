@@ -18,7 +18,7 @@ class MemberRepositoryTest {
         memberRepository.clearStore();
     }
 
-    @Test // 저장 테스트
+    @Test // 저장 테스트1
     void save() {
         // given
         Member member = new Member("hello", 20);
